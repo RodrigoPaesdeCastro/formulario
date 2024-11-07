@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>validar formulario com java script</title>
+     <script>   
+    function validar(){
+        var Nome = formuser.nome.value;
+        var email = formuser.email.value;
+        var senha = formuser.senha.value;
+    if(Nome == ""){
+        alert('preencha o campo Nome');
+        formuser.nome.focus();
+        return false;
+        }
+    if(email == "" || email.indexOf ('@') == -1){
+        alert('preencha o campo E-mail');
+        formuser.email.focus();
+        return false;
+        }
+    if( senha == "" || senha.lenght <= 3){
+            alert('preencha o campo senha com o minimo de caracteres (4) ');
+            formuser.senha.focus();
+            return false;
+        }
+
+    }
+</script>
+</head>
+<body>
+    <CENTER>
+    <h1>Cadastrar Usuarios</h1>
+        <form name="formuser" action="enviar.php" method="POST">
+        Nome: <input type="text" name="Nome"requred ><br><br>
+        E-mail: <input type="text" name="email"requred ><br><br>
+        senha: <input type="password" name="senha"requred ><br><br>
+            <input type="submit" onclick="return validar ()">
+        </form>
+    </body>
+</CENTER>
+</html>
